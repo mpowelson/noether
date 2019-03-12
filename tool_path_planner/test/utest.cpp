@@ -26,8 +26,9 @@
 
 TEST(IntersectTest, TestCase1)
 {
+
   // Get mesh
-  vtkSmartPointer<vtkPoints> points = vtk_viewer::createPlane();
+  vtkSmartPointer<vtkPoints> points = vtk_viewer::createPlane(10, vtk_viewer::FLAT);
   vtkSmartPointer<vtkPolyData> data = vtk_viewer::createMesh(points, 0.5, 5);
   vtk_viewer::generateNormals(data);
 
@@ -60,6 +61,7 @@ TEST(IntersectTest, TestCase1)
   tool.min_hole_size = 0.1;
   planner.setTool(tool);
   planner.setDebugMode(false);
+  planner.setRasterDirection(tool_path_planner::MAJOR_MIDDLE_45);
 
   vtk_viewer::VTKViewer viz;
   std::vector<float> color(3);

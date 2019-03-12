@@ -73,7 +73,7 @@ vtkSmartPointer<vtkPoints> createPlane(unsigned int gridSize, vtk_viewer::plane_
   // Create points on an XY grid with a sinusoidal Z component
   vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 
-  for (unsigned int x = 0; x < gridSize; x++)
+  for (unsigned int x = 0; x < gridSize*3; x++)
   {
     for (unsigned int y = 0; y < gridSize; y++)
     {

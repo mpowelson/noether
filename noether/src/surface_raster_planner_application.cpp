@@ -110,7 +110,7 @@ tool_path_planner::ProcessTool loadTool(ros::NodeHandle& nh)
   nh.param<double>("line_spacing", tool.line_spacing, 0.05);
   nh.param<double>("tool_offset", tool.tool_offset, 0);
   nh.param<double>("intersecting_plane_height", tool.intersecting_plane_height, 0.05);
-  nh.param<double>("min_hole_size", tool.min_hole_size, 0.01);
+  nh.param<double>("min_hole_size", tool.min_hole_size, 1);
   nh.param<double>("min_segment_size", tool.min_segment_size, 0.01);
 
   return tool;
